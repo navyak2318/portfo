@@ -1,0 +1,474 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    /* Darker background for a sleek look */
+    color: #e0e0e0;
+    /* Softer white for text */
+    overflow-x: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade in animation for body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(18, 18, 18, 0.9);
+    /* Slightly transparent dark navbar */
+    transition: background-color 0.3s ease, transform 0.5s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #e0e0e0;
+    /* Softer link color */
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #1e88e5;
+    /* Lighter blue highlight */
+    transform: scale(1.1);
+}
+
+/* Hero section */
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro {
+    text-align: right;
+    flex: 1;
+    padding-right: 20px;
+    /* Reduced padding-right for less space */
+    font-size: 1.5em;
+    /* Increased font size */
+}
+
+.fade-in-slide {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlide 1s forwards;
+}
+
+@keyframes fadeInSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Name hover effect */
+.name-highlight {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #1e88e5;
+    /* Smooth transition for scaling and color */
+}
+
+.name-highlight:hover {
+    transform: scale(1.2);
+    /* Slightly increase size on hover */
+    color: #0a2e4e;
+    /* Change color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .intro-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro {
+        padding-right: 0;
+        /* Remove right padding for smaller screens */
+        padding-bottom: 10px;
+        /* Adjust space below text */
+    }
+
+    .profile-image {
+        max-width: 90%;
+        /* Allow image to be responsive */
+    }
+}
+
+
+/* Zoom in animation */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    border: none;
+    margin-bottom: 30px;
+    color: #fff;
+    /* White text for cards */
+    background-color: #1e1e1e;
+    /* Darker card background */
+    animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon Color and Size */
+.servicesIcon {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .servicesIcon {
+    color: #f39c12;
+    /* Gold icon color on hover */
+    transform: rotate(360deg);
+}
+
+/* Portfolio section */
+#portfolio {
+    background-color: #121212;
+    padding: 50px 0;
+    border-radius: 15px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#portfolio h1 {
+    font-size: 36px;
+    color: #e0e0e0;
+    /* Heading color */
+    font-weight: bold;
+    margin-bottom: 30px;
+    animation: zoomIn 1s ease;
+}
+
+#portfolio .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: slideInUp 1s ease;
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#portfolio .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+#portfolio .card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    object-fit: cover;
+    height: 200px;
+}
+
+#portfolio .card-img-top:hover {
+    transform: scale(1.05);
+}
+
+/* Contact section styling */
+#contact {
+    background-color: #121212;
+    padding: 50px 0;
+    border-radius: 15px;
+    animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+form input,
+form textarea {
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #6c757d;
+    transition: all 0.3s ease;
+    background-color: #222;
+    /* Dark input background */
+    color: #e0e0e0;
+    /* White text for inputs */
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #1e88e5;
+    /* Blue focus border */
+    box-shadow: 0 0 10px rgba(30, 136, 229, 0.7);
+}
+
+/* Button styles */
+form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    /* Button color */
+    color: #fff;
+    /* Button text color */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+    /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    /* Dark footer background */
+    color: #e0e0e0;
+    /* Footer text color */
+    padding: 1rem 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* General styling for the skills section */
+#skills {
+    padding: 40px 0;
+    background-color: black;
+    /* Set background color to black */
+    display: flex;
+    /* Use flexbox to align items */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center-align items horizontally */
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: white;
+    /* Change heading color to white */
+}
+
+.skill-card {
+    display: block;
+    /* Stack cards vertically */
+    background-color: black;
+    /* Skill card background color */
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    /* Adjust margin to create space between cards */
+    box-shadow: 0 2px 5px rgba(50, 40, 241, 0.2);
+    /* Lighter shadow for better visibility */
+    width: 300px;
+    /* Adjust width as needed */
+    transition: box-shadow 0.3s, transform 0.3s;
+    /* Add transition for scaling effect */
+    text-align: left;
+}
+
+.skill-card:hover {
+    box-shadow: 0 4px 10px rgba(50, 40, 241, 0.2);
+    /* Lighter shadow on hover */
+    transform: scale(1.05);
+    /* Slightly scale up on hover */
+}
+
+.skill-progress-bar {
+    background-color: white;
+    /* Set progress bar background color to white */
+    border-radius: 5px;
+    height: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 100%;
+    /* Make the progress bar fill the width of the container */
+}
+
+.skill-progress-fill {
+    height: 100%;
+    background-color: #1e88e5;
+    /* Set fill color to #0056b3 */
+    border-radius: 5px;
+    transition: width 0.4s ease;
+    width: 100%;
+    /* Fill the entire width of the progress bar */
+}
+
+/* Button styles */
+.btn-resume,
+.btn-download {
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    /* Bootstrap primary color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-resume:hover,
+.btn-download:hover {
+    background-color: #1e88e5;
+    /* Darker shade on hover */
+}
+
+.btn-download {
+    background-color: #1e88e5;
+    /* Set color for download button */
+}
+
+.btn-download:hover {
+    background-color: #004494;
+    /* Darker shade on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #343a40;
+    /* Dark background color */
+    color: white;
+    /* White text color */
+    padding: 20px;
+    /* Padding around the footer */
+    text-align: center;
+    /* Center the text */
+    position: relative;
+    /* Allows positioning of child elements if needed */
+    bottom: 0;
+    /* Ensure footer sticks to bottom */
+    width: 100%;
+    /* Full width */
+}
+
+footer p {
+    margin: 0;
+    /* Remove default margin */
+    font-size: 14px;
+    /* Font size for copyright text */
+}
+
+footer .text-white {
+    color: white;
+    /* White color for links */
+    transition: color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+footer .text-white:hover {
+    color: #007bff;
+    /* Change link color on hover */
+}
+
+footer .fab {
+    font-size: 24px;
+    /* Increase icon size for better visibility */
+    margin: 0 10px;
+    /* Margin for spacing between icons */
+    transition: transform 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+footer .fab:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge icon on hover */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 576px) {
+    footer {
+        padding: 15px;
+        /* Adjust padding for smaller screens */
+    }
+
+    footer p {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+    }
+}
